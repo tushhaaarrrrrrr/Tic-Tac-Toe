@@ -1,0 +1,74 @@
+body{
+  background-color: #123;
+  color:#fff;
+}
+main{
+  width: 300px;
+  margin: 50px auto 0;
+}
+.header {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  margin: 10px;
+}
+div.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: .85rem;
+}
+div.board{
+  display: grid;
+  border: 1px solid #fff;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+div.square{
+  width: 100px;
+  height: 100px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  font-size: 4rem;
+  text-align: center;
+}
+div.square:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+div.result{
+  display:grid;
+  font-size: 2rem;
+  padding: 10px;
+  animation: slide-in 1s forwards;
+}
+@keyframes slide-in {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+div.result.green{
+  background-color: rgba(0, 255, 0, 0.25);
+  text-align: center;
+  font-size: 1rem;
+}
+div.result.red{
+  background-color: rgba(255, 0, 0, 0.250);
+  text-align: center;
+  font-size: 1rem;
+}
+div.result.draw{
+  background-color: rgba(0, 0, 0, 0.450);
+  text-align: center;
+  font-size: 1rem;
+}
+div.reset{
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 10px;
+}
