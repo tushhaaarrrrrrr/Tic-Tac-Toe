@@ -1,7 +1,7 @@
 import './App.css';
 import Board from "./Board";
 import Square from "./Square";
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import React from 'react';
 
 const defaultSquares = () => (new Array(9)).fill(null);
@@ -17,6 +17,17 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [isResetting, setIsResetting] = useState(false);
   const [score, setScore] = useState({ X: 0, O: 0, draw: 0 });
+
+  const updateScore = useCallback(() => {
+    const newScore = { ...score };
+    if (winner === 'x') {
+      newScore.X += 1;
+    } else if (winner === 'o') {
+      newScore.O += 1;
+    } else
+      newScore.draw += 1;
+    setScore(newScore);
+  }, [winner, score]);
 
   useEffect(() => {
     const isComputerTurn = squares.filter(square => square !== null).length % 2 === 1;
@@ -93,33 +104,23 @@ function App() {
     }
   }
 
-  function updateScore() {
-    const newScore = { ...score };
-    if (winner === 'x') {
-      newScore.X += 1;
-    } else if (winner === 'o') {
-      newScore.O += 1;
-    } else
-      newScore.draw += 0.5;
-    setScore(newScore);
-  }
-
   return (
     <main>
       <header className='header'>
         Tic-Tac-Toe
       </header>
+      <p>Tap on any square to start!</p>
       <div className="scoreboard">
         <div className="score">
-          <span className="score-label">Wins: </span>
+          <span className="score-label">Wins : </span>
           <span className="score-value">{Number(score.X)}</span>
         </div>
         <div className="score">
-          <span className="score-label">Losses: </span>
+          <span className="score-label">Losses : </span>
           <span className="score-value">{Number(score.O)}</span>
         </div>
         <div className="score">
-          <span className="score-label">Draw: </span>
+          <span className="score-label">Draw : </span>
           <span className="score-value">{Number(score.draw)}</span>
         </div>
       </div>

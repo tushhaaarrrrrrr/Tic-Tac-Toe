@@ -11,13 +11,23 @@ main{
   color: #fff;
   font-size: 2rem;
   text-align: center;
-  margin: 10px;
+  margin-top: 7px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 0px;
+}
+p {
+  text-align: center;
+  font-size: 0.85rem;
+  color:#ffffff85;
+  margin-top: 0px;
+  margin-bottom: 32px;
 }
 div.scoreboard {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
   text-align: center;
   font-size: .85rem;
 }
@@ -38,7 +48,7 @@ div.square{
   text-align: center;
 }
 div.square:hover {
-  background-color: #7700ff;
+  background-color: #618bca50;
   cursor: pointer;
 }
 div.result{
