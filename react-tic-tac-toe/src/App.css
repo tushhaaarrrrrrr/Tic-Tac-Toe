@@ -16,7 +16,7 @@ main{
 div.scoreboard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 50px;
   text-align: center;
   font-size: .85rem;
