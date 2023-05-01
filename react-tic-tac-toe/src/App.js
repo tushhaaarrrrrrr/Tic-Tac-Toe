@@ -72,16 +72,16 @@ function App() {
         putComputerAt(randomIndex);
       }, 500);
     }
-    if (!!winner && !isResetting) { // check if there's a winner and game is not resetting
+    if (!!winner && !isResetting) {
       setIsResetting(true);
-      updateScore(); // update score before resetting
+      updateScore();
       setTimeout(() => {
         setSquares(defaultSquares());
         setWinner(null);
         setIsResetting(false);
-      }, 8000); // Reset game after 8 seconds
+      }, 8000);
     };
-  }, [squares, winner, isResetting]);
+  }, [squares, winner, isResetting, updateScore]);
 
 
   function handleSquareClick(index) {
@@ -99,7 +99,8 @@ function App() {
       newScore.X += 1;
     } else if (winner === 'o') {
       newScore.O += 1;
-    }
+    } else
+      newScore.draw += 0.5;
     setScore(newScore);
   }
 
@@ -121,6 +122,7 @@ function App() {
       <Board>
         {squares.map((square,index) =>
           <Square
+            key={index}
             x={square==='x'?1:0}
             o={square==='o'?1:0}
             onClick={() => handleSquareClick(index)} />
