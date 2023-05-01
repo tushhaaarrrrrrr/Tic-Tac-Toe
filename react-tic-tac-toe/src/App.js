@@ -41,7 +41,7 @@ function App() {
       setWinner('draw');
     }
     const putComputerAt = index => {
-      if (squares[index] === null) {
+      if (squares[index] === null && !winner) { // check if the square is empty and there's no winner yet
         let newSquares = [...squares]; // use spread operator to create a new array
         newSquares[index] = 'o';
         setSquares(newSquares);
