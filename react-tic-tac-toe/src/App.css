@@ -38,7 +38,7 @@ div.square{
   text-align: center;
 }
 div.square:hover {
-  background-color: #444;
+  background-color: #7700ff;
   cursor: pointer;
 }
 div.result{

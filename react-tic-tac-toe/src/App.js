@@ -111,12 +111,16 @@ function App() {
       </header>
       <div className="scoreboard">
         <div className="score">
-          <span className="score-label">Wins : </span>
+          <span className="score-label">Wins: </span>
           <span className="score-value">{Number(score.X)}</span>
         </div>
         <div className="score">
-          <span className="score-label">Losses : </span>
+          <span className="score-label">Losses: </span>
           <span className="score-value">{Number(score.O)}</span>
+        </div>
+        <div className="score">
+          <span className="score-label">Draw: </span>
+          <span className="score-value">{Number(score.draw)}</span>
         </div>
       </div>
       <Board>
